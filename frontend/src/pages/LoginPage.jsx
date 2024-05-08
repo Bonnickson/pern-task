@@ -10,23 +10,21 @@ function LoginPage() {
         formState: { errors },
     } = useForm();
 
-    const { signin, errors: signinErrors } = useAuth();
+    const { signin, errors: loginErrors } = useAuth();
 
     const navigate = useNavigate();
 
     const onSubmit = handleSubmit(async (data) => {
         const user = await signin(data);
 
-        if (user) {
-            navigate("/profile");
-        }
+        if (user) navigate("/tasks");
     });
 
     return (
         <Container className=" h-[calc(100vh-10rem)] flex items-center justify-center">
             <Card>
-                {signinErrors &&
-                    signinErrors.map((err) => (
+                {loginErrors &&
+                    loginErrors.map((err) => (
                         <p className=" bg-red-500 text-white p-2 text-center">
                             {err}
                         </p>
@@ -42,9 +40,9 @@ function LoginPage() {
                             required: true,
                         })}
                     />
-                    {/*errors.email && (
+                    {errors.email && (
                         <p className=" text-red-500">Email is required</p>
-                    )*/}
+                    )}
 
                     <Label htmlFor="password">Password</Label>
                     <Input
@@ -54,14 +52,14 @@ function LoginPage() {
                             required: true,
                         })}
                     />
-                    {/*errors.password && (
+                    {errors.password && (
                         <p className=" text-red-500">Password is required</p>
-                    )*/}
+                    )}
 
                     <Button>Login</Button>
 
                     <div className=" flex justify-between my-4">
-                        <p>Already have an account? </p>
+                        <p className=" mr-4">Already have an account? </p>
                         <Link to="/register" className=" font-bold">
                             Register
                         </Link>

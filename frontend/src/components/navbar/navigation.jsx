@@ -1,4 +1,7 @@
-export const navigation = [
+import { MdTaskAlt } from "react-icons/md";
+import { BiTask, BiUserCircle } from "react-icons/bi";
+
+export const publicRoutes = [
     {
         name: "About",
         path: "/about",
@@ -11,20 +14,22 @@ export const navigation = [
         name: "Register",
         path: "/register",
     },
+];
+
+export const privateRoutes = [
     {
         name: "Tasks",
         path: "/tasks",
+        icon: <BiTask className=" w-5 h-5" />,
     },
     {
-        name: "New Task",
+        name: "Add",
         path: "/tasks/new",
-    },
-    {
-        name: "Edit Task",
-        path: "/tasks/1/edit",
+        icon: <MdTaskAlt className=" w-5 h-5" />,
     },
     {
         name: "Profile",
         path: "/profile",
+        icon: <BiUserCircle className=" w-5 h-5" />,
     },
 ];
