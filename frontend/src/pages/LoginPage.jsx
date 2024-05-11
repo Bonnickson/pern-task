@@ -59,7 +59,7 @@ function LoginPage() {
                     <Button>Login</Button>
 
                     <div className=" flex justify-between my-4">
-                        <p className=" mr-4">Already have an account? </p>
+                        <p className=" mr-2">Already have an account? </p>
                         <Link to="/register" className=" font-bold">
                             Register
                         </Link>

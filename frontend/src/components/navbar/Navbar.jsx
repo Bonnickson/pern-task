@@ -24,7 +24,7 @@ function Navbar() {
                                     <Link
                                         to={path}
                                         className={twMerge(
-                                            " text-slate-300 flex items-center px-3 py-1 gap-x-1",
+                                            " text-slate-300 flex items-center px-3 py-1 gap-x-1 rounded-lg",
                                             location.pathname === path &&
                                                 " bg-sky-500"
                                         )}
@@ -36,8 +36,9 @@ function Navbar() {
                                     </Link>
                                 </li>
                             ))}
+
                             <li
-                                className=" text-slate-300 flex items-center px-3 py-1 hover:cursor-pointer"
+                                className=" text-slate-300 flex items-center px-3 py-1 gap-x-1 hover:cursor-pointer"
                                 onClick={() => {
                                     signout();
                                 }}
@@ -45,13 +46,14 @@ function Navbar() {
                                 <BiLogOut className=" w-5 h-5" />
                                 <span className=" hidden sm:block">Logout</span>
                             </li>
+
                             <li className=" flex gap-x-1 items-center justify-center">
                                 <img
                                     src={user.gravatar}
                                     alt=""
-                                    className=" h-8 w-8 rounded-full"
+                                    className=" h-7 w-7 rounded-full"
                                 />
-                                <span className=" font-medium">
+                                <span className=" font-medium text-xs">
                                     {user.name}
                                 </span>
                             </li>
